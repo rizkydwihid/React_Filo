@@ -80,7 +80,7 @@ class RegisterUser extends Component {
                     <div className="form">
                         <div className="note couns-img mt-5">
                             <img src={require('../assets/img/boy.png')} className="boy" /> <br />
-                            <span style={{ color: "#ffe9af", fontWeight: "bold", fontSize: '20px' }}>Ubah Profil</span>
+                            <span style={{ color: "#476678", fontWeight: "bold", fontSize: '20px' }}>Ubah Profil</span>
                         </div>
 
                         <div className="form-content">

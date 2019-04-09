@@ -14,7 +14,7 @@
     opacity: 0;
     outline: none;   
     cursor: inherit;
-    display: none;
+    display: block;
   }
   
   .kotakgambar .p-1 {

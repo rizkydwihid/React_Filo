@@ -74,7 +74,7 @@ class EditProfile extends Component {
                     <div className="form">
                         <div className="note couns-img">
                             <img src={require('../assets/img/employee.png')} /> <br />
-                            <p style={{ color: "#ffe9af", fontWeight: "bold", fontSize: '20px' }}>Ubah Profil</p>
+                            <p style={{ color: "#476678", fontWeight: "bold", fontSize: '20px' }}>Ubah Profil</p>
                         </div>
                         <div className="form-content">
                             <form onSubmit={event => event.preventDefault()}>
@@ -143,7 +143,7 @@ class EditProfile extends Component {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label style={{ color: "#ffe9af", fontWeight: "bold", fontSize: '15px' }} >Biografi</label><br />
+                                    <label style={{ color: "#476678", fontWeight: "bold", fontSize: '15px' }} >Biografi</label><br />
                                     <textarea className="form-control" onChange={e => this.props.setField(e)} value={this.props.about} name="about" style={{ width: '100%', height: '80px' }}></textarea>
                                 </div>
                                 <div className="row">
