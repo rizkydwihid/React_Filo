@@ -30,7 +30,7 @@ class ProfileCounselor extends Component {
         }
     }
     componentDidMount= async () => {
-        const url = "http://localhost:8010/proxy/counselor"
+        const url = "http://0.0.0.0:5000/counselor"
         const self = this;
         // console.log("test url 2", this.props.token)        
         await axios.get(url, {headers: { Authorization: "Bearer " + this.props.token }})
@@ -45,7 +45,7 @@ class ProfileCounselor extends Component {
             console.log(error);
         })
     
-        await axios.get("http://localhost:8010/proxy/appointment",
+        await axios.get("http://0.0.0.0:5000/appointment",
             { headers: { Authorization: "Bearer " + this.props.token } }
         )
         .then(function(response){
