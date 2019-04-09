@@ -24,7 +24,7 @@ class FindCounselor extends Component {
     componentDidMount = async () => {
         const self = this;
         await axios
-        .get("http://localhost:8010/proxy/public/counselor")
+        .get("http://0.0.0.0:5000/public/counselor")
         .then(function(response){
             self.setState({findCouns: response.data.listCounselor})
             // if (response.data.user.avatar === "") {
@@ -44,7 +44,7 @@ class FindCounselor extends Component {
     searchCouns = async (keyword) => {
         if (keyword.length > 3 ){
             try {
-            const response = await axios.get("http://localhost:8010/proxy/public/counselor?city=" + keyword)
+            const response = await axios.get("http://0.0.0.0:5000/public/counselor?city=" + keyword)
             // console.log("kota", response)
             this.setState({ findCouns: response.data.listCounselor })
             // console.log("hasil pencarian",this.state.findCouns)

@@ -32,7 +32,7 @@ class IsiFindCouns extends Component {
                 </div>
                 <div className="col-md-2 text-center">
                     <Link to={this.state.link + this.props.id} className="nav-link button">Detail</Link>
-                    </div><br/>
+                    </div><br/><br/>
                 <br/>    
             </div>
         )

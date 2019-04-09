@@ -62,7 +62,7 @@ class DetailCouns extends Component {
           const data = { idCounselor : this.state.idCounselor, sessionDate : this.state.calendar };
           const postApp = {
             method: 'post',
-            url: "http://localhost:8010/proxy/appointment",
+            url: "http://0.0.0.0:5000/appointment",
             data: data,
             headers: { Authorization: "Bearer " + this.props.token }
         };
@@ -84,7 +84,7 @@ class DetailCouns extends Component {
     componentDidMount= async () => {
         // this.componentDidCatch.params.index
         const idcouns = this.props.location.pathname.slice(18)
-        const url = "http://localhost:8010/proxy/public/counselor/" + idcouns
+        const url = "http://0.0.0.0:5000/public/counselor/" + idcouns
         const self = this;
         await axios.get(url)
         .then(function(response) {
@@ -93,8 +93,8 @@ class DetailCouns extends Component {
                 // console.log("test response", response)
                 // console.log('test', self.state)
             })
-                self.setState({ id: response.data.idCounselor })
-                if (response.data.user.avatar === "") {
+                self.setState({ id: response.data.counselor.idCounselor })
+                if (response.data.counselor.avatar === "") {
                     self.setState({ avatar: avanull })
                 }
         })
