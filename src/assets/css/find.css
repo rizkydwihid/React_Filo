@@ -1,0 +1,122 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway');
+  .page-header{
+    background-color:#e1a70a;
+    height:100px;
+    margin:0px;
+    
+  }
+  .cart-container{
+    width:95%;
+    margin:auto;
+    /* background: -webkit-linear-gradient(top, #fdfbfb, #a7b6b5); */
+    padding:30px;
+    margin-top:50px;
+    height:auto;
+    font-family: Raleway, sans-serif;
+    border-radius: 10px;
+    /* border: #e1a70a solid; */
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6), 0 1px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  }
+  .cart{
+    border-radius: 10px;
+    background-color: #a7b6b5;
+  }
+  .imeg{
+      border-radius: 50%;
+  }
+  .produk-name{
+    color:#0e2f44;
+    font-weight:bold;
+    margin-top:15px;
+  }
+  .user-name{
+    color:#0e2f44;
+    font-weight:bold;
+    margin-top:5px;
+    font-size: 14px;
+  }
+  .user-mail{
+    color:#1F355D;
+    font-size: 14px;
+  }
+  .user-id{
+    font-weight:bold;
+    color:#e1a70a;
+    font-size: 14px;
+  }
+  .more-info-cart{
+    background-color: transparent;
+    border-bottom:gray 1px solid ;
+    padding-top: 20px;
+  }
+  .todo-links{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+  }
+  .todo-links a i{
+    margin-right:20px;
+  }
+  .todo-links a{
+    color:#000;
+    font-size:16px;
+  }
+
+@media (max-width: 767px){
+    .profile-container{
+        width: 250px;
+    }
+    .todo-links a{
+        margin-left: 20px;
+    }
+}
+.box{
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+
+/* search */
+#custom-search-form {
+  margin:0;
+  margin-top: 15px;
+  padding: 0;
+}
+
+#custom-search-form .search-query {
+  padding-right: 3px;
+  /* padding-right: 4px \9; */
+  padding-left: 5px;
+  /* padding-left: 4px \9; */
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  border: none;
+  background: transparent;
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.6);
+  height: 30px;;
+}
+
+input::placeholder {
+  font-size: 12px;
+  padding: 5px;
+  color: #000;
+}
+#custom-search-form button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.search-query:focus + button {
+  z-index: 3;   
+}

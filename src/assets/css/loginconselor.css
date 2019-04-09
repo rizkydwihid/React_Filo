@@ -1,0 +1,77 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway');
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.main-section1 {
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+}
+.modal-content1 {
+    background-color: #c4c4c4;
+    opacity: .8;
+    padding: 0 18px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #a7b6b5(0, 0, 0, 0.1);
+}
+.user-img1 img {
+    height: 120px;
+    height: 120px;
+}
+.user-img1 {
+    margin-top: -60px;
+    margin-bottom: 45px;
+}
+.form-group1 {
+    margin-bottom: 25px;
+}
+.form-group1 input {
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding-left: 54px;
+
+}
+.form-group1::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f1fa";
+    position: absolute;
+    font-size: 18px;
+    left: 28px;
+    padding-top: 4px;
+    color: #555e60;
+}
+.form-group1:last-of-type::before{
+    content: "\f023";
+}
+.form-input1 button {
+    width: 40%;
+    margin: 5px 0 25px;
+}
+.btn-success1 {
+    background-color: #1c6288;
+    font-size: 19px;
+    border-radius: 5px;
+    padding: 7px 14px;
+    border: 1px solid #daf1ff;
+}
+.btn-success1:hover {
+    background-color: #13445e;
+    border: 1px solid #daf1ff;
+}
+.register1 {
+    padding: 5px 0 25px;
+    color: #daf1ff;
+}
+.register1 a {
+    color: #ffe9af;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .modal-content1 {
+        margin-right: 50px;
+    }
+}
