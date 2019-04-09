@@ -1,38 +1,53 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter, Redirect } from "react-router-dom";
+import { connect } from 'unistore/react';
+import { actions } from '../store';
 
 class JadwalCounselor extends Component {
+    doConfirm = async (id, keyword) => {
+        await this.props.confirmationCounselor(id, keyword)
+            .then(() => {
+                if (keyword === 'confirm') {
+                    alert('Jadwal dengan '+(this.props.fullname)+' telah disetujui.')
+                }
+                this.props.history.replace('/profile')
+
+            });
+    };
     render() {
-        // console.log("jadwal", this.props.jadwal)
         return (
-                <div className="row more-info-cart mb-2 no-border">
-                    {/* <div className="col-md-3 mb-3">
-                        <img src={this.props.jadwal.avatar} className="img-responsive imeg pb-2" width="70" height="75" />
-                    </div> */}
-                    <div className="col-md-2">
-                        <h5 className="user-name text-center"><b>Nama Pasien</b></h5>
-                        <h5 className="user-mail text-center"><i>{this.props.fullname}</i></h5>
-                    </div>
-                    <div className="col-md-2">
-                        <h5 className="user-name text-center"><b>Kontak</b></h5>
-                        <h5 className="user-mail text-center"><i>{this.props.contact}, {this.props.email}</i></h5>
-                    </div>
-                    <div className="col-md-2">
-                        <h5 className="user-name text-center"><b>Waktu</b></h5>
-                        <h5 className="user-mail text-center"><i>{this.props.waktu}</i></h5>
-                    </div>
-                    <div className="col-md-2">
-                        <h5 className="user-name text-center"><b>Status Konfirmasi</b></h5>
-                        <h5 className="user-mail text-center"><i>{this.props.status}</i></h5>
-                    </div>
-                    <div className="col-md-2">
-                        <Link to="" className="btn btn-outline-info mr-2 mb-1" style={{fontSize:"12px", width: '100px'}}><i class="fas fa-user-edit"></i> Konfirmasi</Link>
-                        <Link to="" className="btn btn-outline-danger" style={{fontSize:"12px", width: '100px'}}><i class="fas fa-user-edit"></i> Batalkan</Link>
-                        {/* <h5 className="user-name text-center"><b>Waktu</b></h5> */}
-                        {/* <h5 className="user-mail text-center"><i>{this.props.waktu}</i></h5> */}
-                    </div>
+            <div className="row mb-2">
+
+                <div className="col-md-2">
+                    <h5 className="user-name text-center"><b>Pasien</b></h5>
+                    <h5 className="user-mail text-center"><i>{this.props.fullname}</i></h5>
                 </div>
+                <div className="col-md-3">
+                    <h5 className="user-name text-center"><b>Kontak</b></h5>
+                    <h5 className="user-mail text-center"><i>{this.props.contact}<br/>{this.props.email}</i></h5>
+                </div>
+                <div className="col-md-2">
+                    <h5 className="user-name text-center"><b>Waktu</b></h5>
+                    <h5 className="user-mail text-center"><i>{this.props.waktu}</i></h5>
+                </div>
+                <div className="col-md-2">
+                    <h5 className="user-name text-center"><b>Status Konfirmasi</b></h5>
+                    <h5 className="user-mail text-center"><i>{this.props.status}</i></h5>
+                </div>
+                <div className="col-md-3">
+                        <div className="row mx-auto">
+                            <button className="btn btn-outline-info mb-2" onClick={(id, keyord) => this.doConfirm(this.props.idAppointment, 'confirm')} style={{ fontSize: "14px", width: '110px', fontWeight: 'bold' }}><i class="fas fa-check"></i> Konfirmasi</button>
+                        </div>
+                        <div className="row mx-auto">
+                            <button className="btn btn-outline-danger" onClick={(id, keyord) => this.doConfirm(this.props.idAppointment, 'cancel')} style={{ fontSize: "14px", width: '110px', fontWeight: 'bold' }}><i class="fas fa-ban"></i> Batalkan</button>
+                        </div>
+
+                </div>
+
+            </div>
         )
     }
 }
-export default JadwalCounselor;
+export default connect(
+    "", actions)(withRouter(JadwalCounselor));

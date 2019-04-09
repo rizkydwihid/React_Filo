@@ -34,9 +34,9 @@ class LoginConselor extends Component {
                                     </div>
                                     <div className="form-group" id="show_hide_password">
                                         <input type="password" className="form-control" name="password" placeholder="password" onChange={e => this.props.setField(e)} aria-describedby="input-group-addo"required/>
-                                        <span id="input-group-addon">
+                                        {/* <span id="input-group-addon">
                                             <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                                        </span>
+                                        </span> */}
                                     </div>
                                     <button type="submit" className="btn btn-success" onClick={() => this.doLoginCounselor()}>Login</button>
                                 </form>

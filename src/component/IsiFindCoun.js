@@ -31,7 +31,7 @@ class IsiFindCouns extends Component {
                     <h5 className="user-mail text-center"><i>{this.props.contact}</i></h5>
                 </div>
                 <div className="col-md-2 text-center">
-                    <Link to={this.state.link + this.props.id} className="nav-link button">Detail</Link>
+                    <Link to={this.state.link + this.props.id} className="nav-link button">Buat Janji</Link>
                     </div><br/><br/>
                 <br/>    
             </div>

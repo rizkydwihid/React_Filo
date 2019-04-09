@@ -59,10 +59,11 @@ class DetailCouns extends Component {
     };
     // appointment
     postAppointment = (state, idcouns, calendar) => {
+        console.log('Tanggal', this.state.calendar)
           const data = { idCounselor : this.state.idCounselor, sessionDate : this.state.calendar };
           const postApp = {
             method: 'post',
-            url: "http://0.0.0.0:5000/appointment",
+            url: "http://0.0.0.0:5000/appointment/user",
             data: data,
             headers: { Authorization: "Bearer " + this.props.token }
         };
@@ -82,21 +83,15 @@ class DetailCouns extends Component {
       }
         
     componentDidMount= async () => {
-        // this.componentDidCatch.params.index
         const idcouns = this.props.location.pathname.slice(18)
         const url = "http://0.0.0.0:5000/public/counselor/" + idcouns
         const self = this;
         await axios.get(url)
         .then(function(response) {
-            // console.log("test url 2", response.data)
                 self.setState({...response.data.counselor}, () => {
-                // console.log("test response", response)
-                // console.log('test', self.state)
             })
-                self.setState({ id: response.data.counselor.idCounselor })
-                if (response.data.counselor.avatar === "") {
-                    self.setState({ avatar: avanull })
-                }
+                self.setState({ id: response.data.idCounselor })
+                
         })
     }
 
@@ -109,8 +104,6 @@ class DetailCouns extends Component {
                     <div className="col-md-1 text-center mt-2">
                         <img src={this.state.avatar} className="img-responsive imeg pb-2" width="70" height="75" /><br/>
                         <h5 className="user-name"> {this.state.username}</h5>
-                        {/* ID : <b>{this.state.idCounselor}</b>  */}
-                        {/* <img src={require('../assets/img/girl(1).png')} className="img-responsive imeg pb-2" width="75" height="75" /> */}
                     </div>
                     <div className="col-md-3 mt-2">
                         <h5 className="user-name "><b>Nama &nbsp; : &nbsp; &nbsp; {this.state.fullName} </b></h5>
@@ -143,9 +136,7 @@ class DetailCouns extends Component {
                         />
                     </div>
                     <br/>
-                        <button className="nav-link button" onClick={() => this.postAppointment(this.state.idCounselor)}>Atur Janji</button>
-                        {/* <Link to="/edit" style={{color:"red",textDecoration:"none", fontWeight:"600"}}><i class="fas fa-times-circle"></i> Batalkan</Link><br/><br/>
-                        <Link to="/login" style={{color:"#287a6a",textDecoration:"none", fontWeight:"600"}}><i class="fas fa-money-bill-wave" style={{color:"#e1a70a"}}></i> Bayar</Link> */}
+                        <Link to='/about' className="nav-link button" onClick={() => this.postAppointment(this.state.idCounselor)}>Atur Janji</Link>
                     </div>
                 </div>
                 </div>

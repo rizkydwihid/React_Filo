@@ -15,7 +15,7 @@ class Header extends Component {
                 <header>
                     <nav className="navbar navbar-expand-lg fixed-top menu">
                     {/* <div className="col-4"> */}
-                        <Link className="navbar-brand" to="/about"><img src={require('../../assets/img/r.png')}  height="40px" alt="" /></Link>
+                        <Link className="navbar-brand" to="/about"><img src={require('../../assets/img/rr.png')}  height="40px" alt="" /></Link>
                     {/* </div> */}
                     
                         <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -36,7 +36,7 @@ class Header extends Component {
                 <header>
                     <nav className="navbar navbar-expand-lg fixed-top menu">
                     {/* <div className="col-4"> */}
-                        <Link className="navbar-brand" to="/about"><img src={require('../../assets/img/r.png')}  height="40px" alt="" /></Link>
+                        <Link className="navbar-brand" to="/about"><img src={require('../../assets/img/rr.png')}  height="40px" alt="" /></Link>
                     {/* </div> */}
                     
                         <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,7 +56,7 @@ class Header extends Component {
                 <header>
                     <nav className="navbar navbar-expand-lg fixed-top menu">
                     {/* <div className="col-4"> */}
-                        <Link className="navbar-brand" to="/about"><img src={require("../../assets/img/r.png")}  height="40px" alt="" /></Link>
+                        <Link className="navbar-brand" to="/about"><img src={require("../../assets/img/rr.png")}  height="40px" alt="" /></Link>
                     {/* </div> */}
                     
                         <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

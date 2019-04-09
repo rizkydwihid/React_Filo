@@ -32,10 +32,8 @@ class ProfileCounselor extends Component {
     componentDidMount= async () => {
         const url = "http://0.0.0.0:5000/counselor"
         const self = this;
-        // console.log("test url 2", this.props.token)        
         await axios.get(url, {headers: { Authorization: "Bearer " + this.props.token }})
         .then(function(response) {
-            // console.log("test url 2", response.data)
                 self.setState({...response.data.user}, () => {})
                 if (response.data.user.avatar === "") {
                     self.setState({ avatar: avanull })
@@ -45,13 +43,12 @@ class ProfileCounselor extends Component {
             console.log(error);
         })
     
-        await axios.get("http://0.0.0.0:5000/appointment",
+        await axios
+        .get("http://0.0.0.0:5000/appointment/counselor",
             { headers: { Authorization: "Bearer " + this.props.token } }
         )
         .then(function(response){
-            // console.log("rensponse data", response.data.produk)
             self.setState({meet: response.data.appointment})
-            // console.log("meet up", response.data.appointment)
         })
         .catch(function(error){
             console.log("failed get data counselor", error);
@@ -69,47 +66,53 @@ class ProfileCounselor extends Component {
                     <div className="row text-left rounded">
                         <div className="col-md-2 info pt-5 img mt-3 mb-2">
                         <center>
-                            <img src={this.state.avatar} className="img-responsive box shadow rounded" style={{ width:"100%", height:'15vw', objectFit:'cover'}}/>
+                            <img src={this.state.avatar} className="img-responsive box shadow rounded mb-3" style={{ width:"100%", height:'15vw', objectFit:'cover'}}/>
+                            <Link to="/editprofile" className="nav-link button" style={{fontSize:"14px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
                         </center>
                         </div>
-                        <div className="col-md-4 info mt-5">
+                        <div className="col-md-3 info mt-5">
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Nama Lengkap : </small> {this.state.fullName} </dt>
+                                <dt>Nama Psikolog :</dt>
+                                <dd>{this.state.fullName}</dd>
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Akun : </small> {this.state.username} </dt>
+                                <dt>Akun :</dt>
+                                <dd>@{this.state.username}</dd> 
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Gender : </small> {this.state.gender} </dt>
+                                <dt>Gender :</dt>
+                                <dd>{this.state.gender}</dd> 
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Kontak : </small> {this.state.contact} | {this.state.email} </dt>
+                                <dt>Kontak :</dt>
+                                <dd> {this.state.contact} | {this.state.email} </dd>
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Alamat : </small> {this.state.address}, {this.state.city}</dt>
+                                <dt>Alamat :</dt>
+                                <dd>{this.state.address}, {this.state.city}</dd>
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
-                                <dt> <small> Lisensi : </small> {this.state.lisensi} </dt>
+                                <dt>Lisensi :</dt>
+                                <dd>{this.state.lisensi}</dd>
                             </dl> 
                             <br/>
                             <br/>
-                            <Link to="/editprofile" className="nav-link button" style={{fontSize:"14px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
                         </div>
-                        <div className="col-md-6 info mt-5">
-                            <center>
-                            <span style={{ color: "#476678", fontSize:"14px"}}> <b> Jadwal Konseling </b></span>
+                        <div className="col-md-7 info mt-5">
+                            <center className="border-bottom">
+                            <span style={{ color: "#476678", fontSize:"16px"}}> <b> Jadwal Konseling </b></span>
                             </center>
                             <br/>
-                            <div className="row text-left pl-2 rounded">
+                            <div className=" text-left pl-2">
                             <center>
                             {this.state.meet.map((item, key) => {
                                 const fullname = item.namaPasien !== null ? item.namaPasien:"";
-                                const contact = item.kontakPasien !== null ? item.kontakPasien:"";
-                                const email = item.emailPasien !== null ? item.emailPasien:"";
+                                const contact = item.contact !== null ? item.contact:"";
+                                const email = item.email !== null ? item.email:"";
                                 const waktu = item.sessionDate !== null ? item.sessionDate:"";
-                                const id = item.idCounselor !== null ? item.idCounselor:"";
+                                const idAppointment = item.idAppointment !== null ? item.idAppointment:"";
                                 const status = item.counselorStatus !== null ? item.counselorStatus:"";
-                                return <JadwalCounselor key={key} fullname={fullname} contact={contact} email={email} status={status} waktu={waktu} id={id} />;
+                                return <JadwalCounselor key={key} fullname={fullname} contact={contact} email={email} status={status} waktu={waktu} idAppointment={idAppointment} />;
                             })}
                             </center>
                         </div>
