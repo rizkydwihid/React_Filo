@@ -1,0 +1,103 @@
+.register-form {
+    border-radius: 10px;
+    background-image: linear-gradient(to top, lightgray, #ebedee);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.6), 0 5px 2px 3px rgba(0, 0, 0, 0.2), 0 2px 7px 3px rgba(0, 0, 0, 0.12);
+}
+.couns-img img {
+    height: 100px;
+    height: 100px;
+}
+.couns-img {
+    padding-top: 10px;
+    margin-bottom: 45px;
+}
+.boy{
+    background: #2e4160;
+    border-radius: 50%;
+    border: #1F355D solid 2px;
+}
+.note
+{
+    text-align: center;
+    height: 80px;
+    /* background: -webkit-linear-gradient(left, #0072ff, #8811c5); */
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+    /* border-bottom: #fff 1px solid; */
+}
+.form-content
+{
+    padding: 2%;
+    /* border: 1px solid #1F355D; */
+    margin-bottom: 2%;
+    border-top: none;
+}
+.form-control{
+    border-radius:1.5rem;
+    background: #c2c4c6;
+    box-shadow:  0 2px 0px 0px rgba(0, 0, 0, 0.3), 0 0px 0px 0px rgba(0, 0, 0, 0.12);
+}
+
+.form-control::placeholder{
+    font-size: 12px;
+    color: #1F355D;
+    content: "\f007";
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:10px;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #1c6288;
+    color: #fff;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.6), 0 3px 1px 2px rgba(0, 0, 0, 0.2), 0 2px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* radio */
+.radio {
+    margin: 16px 0;
+    display: block;
+    cursor: pointer; }
+    .radio input {
+      display: none; }
+      .radio input + span {
+        line-height: 22px;
+        height: 22px;
+        padding-left: 22px;
+        display: block;
+        position: relative; }
+        .radio input + span:not(:empty) {
+          padding-left: 30px; }
+        .radio input + span:before, .radio input + span:after {
+          content: '';
+          width: 22px;
+          height: 22px;
+          display: block;
+          border-radius: 50%;
+          left: 0;
+          top: 0;
+          position: absolute; }
+        .radio input + span:before {
+          background: #D1D7E3;
+          transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2); }
+        .radio input + span:after {
+          background: #fff;
+          transform: scale(0.78);
+          transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4); }
+      .radio input:checked + span:before {
+        transform: scale(1.04);
+        background: #5D9BFB; }
+      .radio input:checked + span:after {
+        transform: scale(0.4);
+        transition: transform .3s ease; }
+    .radio:hover input + span:before {
+      transform: scale(0.92); }
+    .radio:hover input + span:after {
+      transform: scale(0.74); }
+    .radio:hover input:checked + span:after {
+      transform: scale(0.4); }
+  
+ 

@@ -1,0 +1,70 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway');
+  .page-header{
+    background-color:#e1a70a;
+    height:100px;
+    margin:0px;
+    
+  }
+  .about-container{
+    width:95%;
+    margin:auto;
+    background-color:#fff;
+    padding:30px;
+    margin-top:20px;
+    height:auto;
+    font-family: Raleway, sans-serif;
+    border-radius: 10px;
+    border: #e1a70a solid;
+    z-index: -1;
+  }
+  .about{
+    border-radius: 10px;
+    background-color: white;
+    color: white;
+  }
+  .produk-name{
+    color:#0e2f44;
+    font-weight:bold;
+    margin-top:15px;
+  }
+  .user-name{
+    color:#0e2f44;
+    font-weight:bold;
+    margin-top:5px;
+    font-size: 14px;
+  }
+  .user-mail{
+    color:#858585;
+    font-size: 14px;
+  }
+  .user-id{
+    font-weight:bold;
+    color:#e1a70a;
+    font-size: 14px;
+  }
+  .more-info-about{
+    background-color: white;
+    border-bottom:lightgray 1px solid ;
+    padding-top: 20px;
+  }
+  .todo-links{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+  }
+  .todo-links a i{
+    margin-right:20px;
+  }
+  .todo-links a{
+    color:#000;
+    font-size:16px;
+  }
+
+@media (max-width: 767px){
+    .profile-container{
+        width: 250px;
+    }
+    .todo-links a{
+        margin-left: 20px;
+    }
+}
+
