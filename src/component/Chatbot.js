@@ -109,7 +109,7 @@ class Chatbot extends Component {
                         <div id="chat-overlay"></div>
                         <img onClick = { () => this.postSession() } src={require('../assets/img/lovebird.ico')} id="filo" height="60" />
                         <div className="kelip">
-                            <span id="blink_text">Sapa Aku..</span><br />
+                            <span id="blink_text" >Sapa Aku..</span><br />
                             <span> </span>
                         </div>
                     </div>

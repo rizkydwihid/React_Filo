@@ -80,7 +80,7 @@
 .bg-foot{
     background-image: url("../img/relax.jpg");
     margin-top: -1000px;
-    opacity: 0.7;
+    opacity: 0.4;
     /* padding-bottom: 100px; */
     z-index: -1;
     background-repeat: no-repeat;

@@ -61,17 +61,18 @@ class EmotionRecord extends Component {
                     rotate: -30,
                         rotateAlways: true,
                             style: {
-                        fontSize: '0.6em',
+                        fontSize: '0.8em',
                             colors: '#476678'
+                            
                     }
                 },
                 // axisTicks: {show: false}
             },
             yaxis: {
                 title: {
-                    text: 'Temperature',
+                    text: 'Intensi (kali)',
                         style: {
-                        fontSize: '0.7em',
+                        fontSize: '0.9em',
                             color: '#476678'
                     }
                 },

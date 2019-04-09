@@ -277,14 +277,33 @@ export const actions = store => ({
       });
   },
 
-  // batalkan janji
+  // batalkan janji oleh user
   cancelAppointmentUser: async (state, idAppointment) => {
-    console.log("ini id yang dari store", idAppointment)
     const data_edit = {
-      id: idAppointment
+      idAppointment: idAppointment
     };
     await axios
-      .put("http://0.0.0.0:5000/appointment", data_edit, {
+      .put("http://0.0.0.0:5000/appointment/user", data_edit, {
+        headers: {
+          Authorization: 'Bearer ' + store.getState().token,
+          'Content-Type': 'application/json',
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+
+  // batalkan janji oleh counselor
+  confirmationCounselor: async (state, idAppointment, jawaban) => {
+    const data_edit = {
+      idAppointment: idAppointment,
+      counselorStatus: jawaban
+    };
+    console.log("ISADJISAJDIASJDI", jawaban)
+    console.log("1231231231231", idAppointment)
+    await axios
+      .put("http://0.0.0.0:5000/appointment/counselor", data_edit, {
         headers: {
           Authorization: 'Bearer ' + store.getState().token,
           'Content-Type': 'application/json',

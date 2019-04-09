@@ -23,7 +23,7 @@ class ProfileUser extends Component {
             email: "",
             address: "",
             avatar: "",
-            Jadwal: {},
+            listJadwal: [],
 
             day7: "",
             day6: "",
@@ -64,7 +64,7 @@ class ProfileUser extends Component {
         await axios.get(url, { headers: { Authorization: "Bearer " + this.props.token } })
             .then(function (response) {
                 // console.log("test url 2", response.data)
-                self.setState({ ...response.data.user }, () => {})
+                self.setState({ ...response.data.user }, () => { })
                 if (response.data.user.avatar === "") {
                     self.setState({ avatar: avanull })
                 }
@@ -94,7 +94,7 @@ class ProfileUser extends Component {
                     sad2: response.data.weeklyCheck[5]['sad'],
                     sad1: response.data.weeklyCheck[6]['sad'],
                     sad0: response.data.weeklyCheck[7]['sad'],
-                    
+
                     happy7: response.data.weeklyCheck[0]['happy'],
                     happy6: response.data.weeklyCheck[1]['happy'],
                     happy5: response.data.weeklyCheck[2]['happy'],
@@ -105,32 +105,36 @@ class ProfileUser extends Component {
                     happy0: response.data.weeklyCheck[7]['happy'],
                 })
             })
-        // await axios
-        // .get("http://0.0.0.0:5000/appointment",
-        //     { headers: { Authorization: "Bearer " + this.props.token } }
-        // )
-        // .then(function(response){
-        //     if (response.status === 200) {
-        //     self.setState({Jadwal: response.data.appointment})}
-        // })
-        // .catch(function(error){
-        //     console.log("failed get data counselor", error);
-        // });
+        await axios
+            .get("http://0.0.0.0:5000/appointment/user",
+                { headers: { Authorization: "Bearer " + this.props.token } }
+            )
+            .then(function (response) {
+                if (response.status === 200) {
+                    self.setState({ listJadwal: response.data.appointment })
+                }
+                console.log("list jadwal", self.getState(this.state.listJadwal));
+            })
+            .catch(function (error) {
+                console.log("failed get data counselor", error);
+            });
     }
 
     render() {
+        let jadwalKonseling
         if ((!this.props.is_login) && (this.props.statusUser !== "user")) {
             this.props.history.push("/about")
         }
+
         return (
             <section>
                 <Header />
                 <div className="cart-container mb-5">
                     <div className="row text-left rounded">
                         <div className="col-md-2 info pt-5 img mt-4 mb-2">
-                        <center>
-                            <img src={this.state.avatar} className="img-responsive imeg" height="100" width="90" height="75"/>
-                        </center>
+                            <center>
+                                <img src={this.state.avatar} className="img-responsive imeg" height="100" width="90" height="75" />
+                            </center>
                         </div>
                         <div className="col-md-4 info mt-5">
                             <dl className="dlist-align" style={{ color: "#476678" }}>
@@ -147,54 +151,75 @@ class ProfileUser extends Component {
                             </dl>
                             <dl className="dlist-align" style={{ color: "#476678" }}>
                                 <dt> <small> Alamat : </small> {this.state.address} </dt>
-                            </dl> 
-                            <br/>
-                            <br/>
-                            <Link to="/editprofileuser" className="nav-link button" style={{fontSize:"14px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
+                            </dl>
+                            <br />
+                            <br />
+                            <Link to="/editprofileuser" className="nav-link button" style={{ fontSize: "14px" }}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
                         </div>
                         <div className="col-md-6 info mt-5">
                             <center>
                                 <EmotionRecord
-                                    day7 = {this.state.day7}
-                                    day6 = {this.state.day6}
-                                    day5 = {this.state.day5}
-                                    day4 = {this.state.day4}
-                                    day3 = {this.state.day3}
-                                    day2 = {this.state.day2}
-                                    day1 = {this.state.day1}
-                                    day0 = {this.state.day0}
-                                    
-                                    sad7 = {this.state.sad7}
-                                    sad6 = {this.state.sad6}
-                                    sad5 = {this.state.sad5}
-                                    sad4 = {this.state.sad4}
-                                    sad3 = {this.state.sad3}
-                                    sad2 = {this.state.sad2}
-                                    sad1 = {this.state.sad1}
-                                    sad0 = {this.state.sad0}
+                                    day7={this.state.day7}
+                                    day6={this.state.day6}
+                                    day5={this.state.day5}
+                                    day4={this.state.day4}
+                                    day3={this.state.day3}
+                                    day2={this.state.day2}
+                                    day1={this.state.day1}
+                                    day0={this.state.day0}
 
-                                    happy7 = {this.state.happy7}
-                                    happy6 = {this.state.happy6}
-                                    happy5 = {this.state.happy5}
-                                    happy4 = {this.state.happy4}
-                                    happy3 = {this.state.happy3}
-                                    happy2 = {this.state.happy2}
-                                    happy1 = {this.state.happy1}
-                                    happy0 = {this.state.happy0}
+                                    sad7={this.state.sad7}
+                                    sad6={this.state.sad6}
+                                    sad5={this.state.sad5}
+                                    sad4={this.state.sad4}
+                                    sad3={this.state.sad3}
+                                    sad2={this.state.sad2}
+                                    sad1={this.state.sad1}
+                                    sad0={this.state.sad0}
+
+                                    happy7={this.state.happy7}
+                                    happy6={this.state.happy6}
+                                    happy5={this.state.happy5}
+                                    happy4={this.state.happy4}
+                                    happy3={this.state.happy3}
+                                    happy2={this.state.happy2}
+                                    happy1={this.state.happy1}
+                                    happy0={this.state.happy0}
                                 />
 
                             </center>
                         </div>
                     </div>
-                    {/* <div className="row text-left rounded">
-                        
-                        <JadwalUser 
-                            jadwal = {this.state.Jadwal}
-                            id = {this.state.Jadwal}
-                        />
-                        <br/>
-                    </div> */}
-                </div><br/><br/>
+                    <div className="row text-left">
+                        <div className="col-md-6 info ml-2">
+                            <center>
+                                <span style={{ color: "#476678", fontSize: "14px" }}> <b> Jadwal Konseling </b></span>
+                            </center>
+                            {this.state.listJadwal.map((item, key) => {
+                                const idAppointment = item.idAppointment !== null ? item.idAppointment : "";
+                                const namaCounselor = item.namaCounselor !== null ? item.namaCounselor : "";
+                                const counselorStatus = item.counselorStatus !== null ? item.counselorStatus : "";
+                                const status = item.status !== null ? item.status : "";
+                                const avatar = item.avatar !== null ? item.avatar : avanull;
+                                const lisensi = item.lisensi !== null ? item.lisensi : "";
+                                const contact = item.contact !== null ? item.contact : "";
+                                const email = item.email !== null ? item.email : "";
+                                const sessionDate = item.sessionDate !== null ? item.sessionDate : "";
+                                return <JadwalUser
+                                    idAppointment={idAppointment}
+                                    namaCounselor={namaCounselor}
+                                    counselorStatus={counselorStatus}
+                                    status={status}
+                                    lisensi={lisensi}
+                                    avatar={avatar}
+                                    contact={contact}
+                                    sessionDate={sessionDate}
+                                    email={email} />;
+                            })}
+                        </div>
+                        <br />
+                    </div>
+                </div><br /><br />
                 <Footer />
             </section>
         )
