@@ -25,7 +25,7 @@ class JadwalCounselor extends Component {
                 </div>
                 <div className="col-md-3">
                     <h5 className="user-name text-center"><b>Kontak</b></h5>
-                    <h5 className="user-mail text-center"><i>{this.props.contact}<br/>{this.props.email}</i></h5>
+                    <h5 className="user-mail text-center"><i>{this.props.contact}</i></h5>
                 </div>
                 <div className="col-md-2">
                     <h5 className="user-name text-center"><b>Waktu</b></h5>
