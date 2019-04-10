@@ -54,11 +54,11 @@ class ProfileUser extends Component {
         }
     }
     componentDidMount = async () => {
-        const url = "http://0.0.0.0:5000/user"
+        const url = "https://api.relieve.care/user"
         const self = this;
         const getEmo = {
             method: 'get',
-            url: 'http://0.0.0.0:5000/emotionmeter',
+            url: 'https://api.relieve.care/emotionmeter',
             headers: { Authorization: "Bearer " + this.props.token }
         }
         await axios.get(url, { headers: { Authorization: "Bearer " + this.props.token } })
@@ -106,7 +106,7 @@ class ProfileUser extends Component {
                 })
             })
         await axios
-            .get("http://0.0.0.0:5000/appointment/user",
+            .get("https://api.relieve.care/appointment/user",
                 { headers: { Authorization: "Bearer " + this.props.token } }
             )
             .then(function (response) {
@@ -154,7 +154,9 @@ class ProfileUser extends Component {
                             </dl>
                             <br />
                             <br />
+                            <center>
                             <Link to="/editprofileuser" className="nav-link button" style={{ fontSize: "14px" }}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
+                            </center>
                         </div>
                         <div className="col-md-6 info mt-5">
                             <center>

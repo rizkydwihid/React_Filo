@@ -15,7 +15,7 @@ class Chatbot extends Component {
                 // $.post( "http://localhost:5000/send_message", {message: message}, handle_response);
                 //   $.post( "http://localhost:8010/proxy/send_message", {message: message}, handle_response);
                 $.ajax({
-                    url: 'http://localhost:8010/proxy/send_message',
+                    url: 'https://api.relieve.care/send_message',
                     type: 'post',
                     data: {
                         message: message
@@ -92,7 +92,7 @@ class Chatbot extends Component {
         const token = this.props.token
         const post = {
             method: 'post',
-            url: 'http://localhost:8010/proxy/emotionmeter',
+            url: 'https://api.relieve.care/emotionmeter',
             headers: { Authorization: "Bearer " + token }
         }
         await axios(post)

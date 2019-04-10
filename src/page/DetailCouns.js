@@ -63,7 +63,7 @@ class DetailCouns extends Component {
           const data = { idCounselor : this.state.idCounselor, sessionDate : this.state.calendar };
           const postApp = {
             method: 'post',
-            url: "http://0.0.0.0:5000/appointment/user",
+            url: "https://api.relieve.care/appointment/user",
             data: data,
             headers: { Authorization: "Bearer " + this.props.token }
         };
@@ -84,7 +84,7 @@ class DetailCouns extends Component {
         
     componentDidMount= async () => {
         const idcouns = this.props.location.pathname.slice(18)
-        const url = "http://0.0.0.0:5000/public/counselor/" + idcouns
+        const url = "https://api.relieve.care/public/counselor/" + idcouns
         const self = this;
         await axios.get(url)
         .then(function(response) {

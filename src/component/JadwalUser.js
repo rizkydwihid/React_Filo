@@ -23,7 +23,9 @@ class JadwalUser extends Component {
 
             <div className="row more-info-cart shadow rounded mb-5">
                 <div className="col-md-2 mb-3">
+                    <center>
                     <img src={this.props.avatar} className="img-responsive imeg pb-2" width="70" height="75" />
+                    </center>
                 </div>
                 <div className="col-md-2">
                     <h5 className="user-name text-center"><b>Nama Konselor</b></h5>
@@ -41,9 +43,12 @@ class JadwalUser extends Component {
                     <h5 className="user-name text-center"><b>Kontak</b></h5>
                     <h5 className="user-mail text-center"><i>{this.props.contact}</i></h5>
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-2 mb-2">
+                <center>
                 <button className="btn btn-outline-danger" onClick={(id) => this.doCancel(this.props.idAppointment)} style={{ fontSize: "12px", width: '90px', fontWeight: 'bold' }}><i class="fas fa-ban"></i> Batalkan</button>
+                </center>
                 </div>
+                <br/>
             </div>
         )
     }
