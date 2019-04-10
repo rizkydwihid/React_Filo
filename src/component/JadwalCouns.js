@@ -35,16 +35,18 @@ class JadwalCounselor extends Component {
                     <h5 className="user-name text-center"><b>Status Konfirmasi</b></h5>
                     <h5 className="user-mail text-center"><i>{this.props.status}</i></h5>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 text-center">
+                    <center>
                         <div className="row mx-auto">
                             <button className="btn btn-outline-info mb-2" onClick={(id, keyord) => this.doConfirm(this.props.idAppointment, 'confirm')} style={{ fontSize: "14px", width: '110px', fontWeight: 'bold' }}><i class="fas fa-check"></i> Konfirmasi</button>
                         </div>
+                    
                         <div className="row mx-auto">
                             <button className="btn btn-outline-danger" onClick={(id, keyord) => this.doConfirm(this.props.idAppointment, 'cancel')} style={{ fontSize: "14px", width: '110px', fontWeight: 'bold' }}><i class="fas fa-ban"></i> Batalkan</button>
                         </div>
-
+                    </center>
                 </div>
-
+            <br/>
             </div>
         )
     }

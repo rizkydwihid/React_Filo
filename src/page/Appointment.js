@@ -4,6 +4,7 @@ import Footer from '../component/Footer';
 import { withRouter } from "react-router-dom";
 import { connect } from 'unistore/react';
 import { actions } from '../store';
+import swal from 'sweetalert';
 // import { Link } from 'react-router-dom';
 import '../assets/css/find.css';
 import axios from 'axios';
@@ -21,7 +22,7 @@ class Appointment extends Component {
         const self = this;
         // console.log("TAEEEK", this.props.token )
         await axios
-        .get("http://localhost:8010/proxy/appointment", {
+        .get("https://api.relieve.care/appointment", {
             headers: { 
                 Authorization: "Bearer " + this.props.token ,
                 'Content-Type':'application/json',
@@ -31,6 +32,7 @@ class Appointment extends Component {
             // console.log("data appoi", this.props.token)
             self.setState({listAppt: response.data.appointment})
         })
+        swal( "Jadwal konseling berhasil dibuat..","","success")
         .catch(function(error){
             console.log("failed get data counselor", error);
         });

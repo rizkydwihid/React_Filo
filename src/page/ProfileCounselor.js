@@ -30,7 +30,7 @@ class ProfileCounselor extends Component {
         }
     }
     componentDidMount= async () => {
-        const url = "http://0.0.0.0:5000/counselor"
+        const url = "https://api.relieve.care/counselor"
         const self = this;
         await axios.get(url, {headers: { Authorization: "Bearer " + this.props.token }})
         .then(function(response) {
@@ -44,7 +44,7 @@ class ProfileCounselor extends Component {
         })
     
         await axios
-        .get("http://0.0.0.0:5000/appointment/counselor",
+        .get("https://api.relieve.care/appointment/counselor",
             { headers: { Authorization: "Bearer " + this.props.token } }
         )
         .then(function(response){
@@ -66,32 +66,32 @@ class ProfileCounselor extends Component {
                     <div className="row text-left rounded">
                         <div className="col-md-2 info pt-5 img mt-3 mb-2">
                         <center>
-                            <img src={this.state.avatar} className="img-responsive box shadow rounded mb-3" style={{ width:"100%", height:'15vw', objectFit:'cover'}}/>
+                            <img src={this.state.avatar} className="img-responsive imeg box shadow rounded mb-3" style={{width:"90%", objectFit:'cover'}}/><br/>
                             <Link to="/editprofile" className="nav-link button" style={{fontSize:"12px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
                         </center>
                         </div>
                         <div className="col-md-3 info mt-5">
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Nama Psikolog :</dt>
                                 <dd>{this.state.fullName}</dd>
                             </dl>
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Akun :</dt>
                                 <dd>@{this.state.username}</dd> 
                             </dl>
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Gender :</dt>
                                 <dd>{this.state.gender}</dd> 
                             </dl>
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Kontak :</dt>
                                 <dd> {this.state.contact} | {this.state.email} </dd>
                             </dl>
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Alamat :</dt>
                                 <dd>{this.state.address}, {this.state.city}</dd>
                             </dl>
-                            <dl className="dlist-align" style={{ color: "#476678" }}>
+                            <dl className="dlist-align text-center" style={{ color: "#476678" }}>
                                 <dt>Lisensi :</dt>
                                 <dd>{this.state.lisensi}</dd>
                             </dl> 

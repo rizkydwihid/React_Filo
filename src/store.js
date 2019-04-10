@@ -5,7 +5,7 @@ import persistStore from 'unissist';
 import localStorageAdapter from 'unissist/integrations/localStorageAdapter';
 
 // const baseUrl = "http://18.136.233.150:5000";
-const baseUrl = "http://0.0.0.0:5000";
+const baseUrl = "https://api.relieve.care";
 // const urlSearchCouns = baseUrl + "/public/counselor?city=";
 const initialState = {
   is_login: false,
@@ -61,7 +61,7 @@ export const actions = store => ({
   postLoginCouns: async state => {
     const data = { username: state.username, password: state.password };
     await axios
-      .post("http://0.0.0.0:5000/login/counselor", data, {
+      .post("https://api.relieve.care/login/counselor", data, {
         headers: { 
           Authorization: "Bearer " + store.getState().token ,
           'Content-Type':'application/json',
@@ -177,7 +177,7 @@ export const actions = store => ({
       avatar: store.getState().avatar
     };
     await axios
-      .post("http://0.0.0.0:5000/counselor", data, {
+      .post("https://api.relieve.care/counselor", data, {
         headers: {
           'Content-Type': 'application/json',
         }
@@ -213,7 +213,7 @@ export const actions = store => ({
     };
     // console.log("tes", data)
     await axios
-      .post("http://0.0.0.0:5000/user", data, {
+      .post("https://api.relieve.care/user", data, {
         headers: {
           'Content-Type': 'application/json',
         }
@@ -251,7 +251,7 @@ export const actions = store => ({
       about: state.about
     };
     await axios
-      .put("http://0.0.0.0:5000/counselor", data_edit, {
+      .put("https://api.relieve.care/counselor", data_edit, {
         headers: {
           Authorization: 'Bearer ' + store.getState().token,
           'Content-Type': 'application/json',
@@ -276,7 +276,7 @@ export const actions = store => ({
       avatar: store.getState().avatar,
     };
     await axios
-      .put("http://0.0.0.0:5000/user", data_edit, {
+      .put("https://api.relieve.care/user", data_edit, {
         headers: {
           Authorization: 'Bearer ' + store.getState().token,
           'Content-Type': 'application/json',
@@ -294,7 +294,7 @@ export const actions = store => ({
       idAppointment: idAppointment
     };
     await axios
-      .put("http://0.0.0.0:5000/appointment/user", data_edit, {
+      .put("https://api.relieve.care/appointment/user", data_edit, {
         headers: {
           Authorization: 'Bearer ' + store.getState().token,
           'Content-Type': 'application/json',
@@ -315,7 +315,7 @@ export const actions = store => ({
     // console.log("ISADJISAJDIASJDI", jawaban)
     // console.log("1231231231231", idAppointment)
     await axios
-      .put("http://0.0.0.0:5000/appointment/counselor", data_edit, {
+      .put("https://api.relieve.care/appointment/counselor", data_edit, {
         headers: {
           Authorization: 'Bearer ' + store.getState().token,
           'Content-Type': 'application/json',

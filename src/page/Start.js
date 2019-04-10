@@ -24,8 +24,8 @@ class Start extends Component{
                             <div className="col-md-4 mt-3 pt-2 text-center">
                                 <img src={require('../assets/img/untitled.png')} style={{alignContent:"middle"}} style={{width:"90%"}} alt=""/><br/>
                                 <hr style={{width:"30%", border:"1px solid #415e61"}}/>
-                                <p style={{fontSize:"14px", color:"#415e61"}}>Counseling and Mental Health Therapy. 
-                                <br/> With <span style={{fontWeight:"bold"}} >AI Chat</span> for mental health, stress check and anxiety relief.
+                                <p style={{fontSize:"14px", color:"#415e61"}}>Aplikasi kesehatan psikis yang dilengkapi 
+                                <br/><span style={{fontWeight:"bold"}} >AI Chat</span>, data perkembangan psikis, dan daftar psikolog.
                                 </p><br/>
                                 <Link to="/about" className="nav-link button">Try it</Link>
                             </div>
