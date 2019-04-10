@@ -1,4 +1,5 @@
 import createStore from "unistore";
+import swal from 'sweetalert';
 import axios from "axios";
 import persistStore from 'unissist';
 import localStorageAdapter from 'unissist/integrations/localStorageAdapter';
@@ -98,9 +99,14 @@ export const actions = store => ({
                   if (response.data.user.about === null) {
                     store.setState({ about: "", })
                   }
+                  swal( "Berhasil login..","","success")
+                  .catch(function (error) {
+                  console.log(error);
+                  })
               }
           })
           .catch(function (error) {
+            console.log('INI EROR KARENA LOGIN')
               console.log(error);
       })
     })
@@ -145,6 +151,7 @@ export const actions = store => ({
                         })
                     }
                 })
+                swal( "Berhasil login..","","success")
                 .catch(function (error) {
                     console.log(error);
                 })
@@ -185,6 +192,7 @@ export const actions = store => ({
           });
         }
       })
+      swal( "Registrasi berhasil!","Silahkan login terlebih dahulu","","success")
       .catch(function (error) {
         console.log(error);
       });
@@ -220,6 +228,7 @@ export const actions = store => ({
           });
         }
       })
+      swal( "Registrasi berhasil!","Silahkan login terlebih dahulu","success")
       .catch(function (error) {
         console.log(error);
       });
@@ -248,6 +257,7 @@ export const actions = store => ({
           'Content-Type': 'application/json',
         }
       })
+      swal( "Data diri anda berhasil diperbarui..","","success")
       .catch(function (error) {
         console.log(error);
       });
@@ -272,6 +282,7 @@ export const actions = store => ({
           'Content-Type': 'application/json',
         }
       })
+      swal( "Data diri anda berhasil diperbarui..","","success")
       .catch(function (error) {
         console.log(error);
       });
@@ -289,8 +300,9 @@ export const actions = store => ({
           'Content-Type': 'application/json',
         }
       })
+      swal( "Jadwal konseling telah anda batalkan..","","success")
       .catch(function (error) {
-        console.log(error);
+      swal( "Jadwal konseling tidak bisa dibatalkan..","","error")
       });
   },
 
@@ -300,8 +312,8 @@ export const actions = store => ({
       idAppointment: idAppointment,
       counselorStatus: jawaban
     };
-    console.log("ISADJISAJDIASJDI", jawaban)
-    console.log("1231231231231", idAppointment)
+    // console.log("ISADJISAJDIASJDI", jawaban)
+    // console.log("1231231231231", idAppointment)
     await axios
       .put("http://0.0.0.0:5000/appointment/counselor", data_edit, {
         headers: {
@@ -309,6 +321,7 @@ export const actions = store => ({
           'Content-Type': 'application/json',
         }
       })
+      swal( "Jadwal konseling telah anda konfirmasi..","","success")
       .catch(function (error) {
         console.log(error);
       });

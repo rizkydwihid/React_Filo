@@ -67,7 +67,7 @@ class ProfileCounselor extends Component {
                         <div className="col-md-2 info pt-5 img mt-3 mb-2">
                         <center>
                             <img src={this.state.avatar} className="img-responsive box shadow rounded mb-3" style={{ width:"100%", height:'15vw', objectFit:'cover'}}/>
-                            <Link to="/editprofile" className="nav-link button" style={{fontSize:"14px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
+                            <Link to="/editprofile" className="nav-link button" style={{fontSize:"12px"}}><i class="fas fa-user-edit"></i> Perbarui Profil</Link>
                         </center>
                         </div>
                         <div className="col-md-3 info mt-5">

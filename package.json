@@ -17,6 +17,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-vis": "^1.11.6",
+    "sweetalert": "^2.1.2",
     "unissist": "^1.4.0",
     "unistore": "^3.4.1"
   },
